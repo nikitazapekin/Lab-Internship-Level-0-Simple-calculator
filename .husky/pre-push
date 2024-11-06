@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "Running tests..."
+output=$(echo "error: test error\nerror: another test error\nerror: third test error" 2>&1)
+test_exit_code=$?
+
+echo "Tests completed with exit code: $test_exit_code"
+echo "Test output:"
+echo "$output"
+
+ 
+echo "$output" > test_output.log
+
+error_count=$(echo "$output" | grep -o "error" | wc -l)
+
+echo "Number of errors found: $error_count"
+
+if [ "$error_count" -gt 30 ]; then
+  echo "Push rejected: more than 30 errors found in tests."
+  exit 1
+fi
+
+echo "Push accepted: 30 or fewer errors found in tests."
+exit 0
