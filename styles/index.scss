@@ -1,147 +1,139 @@
 //@import "./theme";
 @use "./theme" as *;
+//@use "./helpers" as *;
+
 
 .header {
     background-color: $gray;
+
+    &__container {
+        display: flex;
+        padding: 20px 0;
+        justify-content: space-between;
+    }
+
+    &__logo {
+   //    @include fontSize(48px);
+     //   font-size: 48px;
+        color: $white;
+        cursor: pointer;
+    }
 }
 
-.header__container {
-    display: flex;
-   padding: 20px 0;
-    justify-content: space-between;
-}
-.header__logo {
-    font-size: 48px;
-    color: $white;
-    cursor: pointer;
-}
 .calculator {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
 
-}
+    &__inner {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        border-radius: 30px;
+        align-self: center;
+        justify-self: center;
+        background-color: $gray;
+        display: grid;
+        grid-template-columns: minmax(300px, 800px);
+    }
 
-.calculator__inner {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-    border-radius: 30px;
-    align-self: center;
-    justify-self: center;
-    background-color: $gray;
-    display: grid;
-    grid-template-columns: minmax(300px, 800px);
-}
+    &__display {
+        display: flex;
+        justify-content: space-between;
+        min-height: 200px;
+        padding: 15px;
+    }
 
-.calculator__display {
-    display: flex;
-    justify-content: space-between;
-    min-height: 200px;
-    padding: 15px;
+    &__input {
+        cursor: default;
+        user-select: none;
+        font-size: 48px;
+        text-align: right;
+        padding-top: 30px;
+        color: $white;
+    }
 
-}
+    &__btns {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(auto, 1fr);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        overflow: hidden;
+        text-align: center;
+        grid-column-gap: 4px;
+        grid-row-gap: 4px;
+    }
 
-.calculator__input {
-    cursor: default;
-    user-select: none;
-    font-size: 48px;
+    &__btn {
+        width: 100%;
+        background-color: $lightestGray;
+        cursor: pointer;
+        font-size: 28px;
+        padding: 20px 10px;
 
-    text-align: right;
-    padding-top: 30px;
-    color:  $white;
-}
+        color: $white;
+        font-family: 900;
 
-.calculator__btns {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto, 1fr);
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    overflow: hidden;
+    }
 
-    text-align: center;
+    .btn__orange {
+        background-color: $orange;
+    }
 
-    grid-column-gap: 4px;
-    grid-row-gap: 4px
-}
+    .btn__gray {
+        background-color: $lightGray;
+    }
 
-.calculator__btn {
-    width: 100%;
-    background-color: $lightestGray;
-    cursor: pointer;
-    font-size: 28px;
-    padding: 20px 10px;
-    color:  $white;
-    font-family: 900;
-
-
-}
-
-.btn__orange {
-    background-color: $orange;
-}
-
-.btn__gray {
-    background-color: $lightGray;
-}
-
-.btn__large {
-    grid-column: span 2;
+    .btn__large {
+        grid-column: span 2;
+    }
 }
 
 .dots {
     display: flex;
     column-gap: 30px;
 
-}
+    .dot {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
 
-.dot {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    .dotG {
+        background-color: $green;
+    }
 
+    .dotR {
+        background-color: $red;
+    }
 
-}
-
-.dotG {
-    background-color: $green;
-
-}
-
-.dotR {
-    background-color: $red;
-}
-
-.dotY {
-    background-color: $yellow;
+    .dotY {
+        background-color: $yellow;
+    }
 }
 
 .footer {
     background-color: $gray;
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    &__text {
+        font-size: 20px;
+        color: $white;
+    }
 }
 
-.footer__inner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-}
-.footer__text {
-    font-size: 20px;
-    color:  $white;
-}
-/*
+.btn-effect {
+    transition: 0.4s ease-in-out;
 
-.dotG {
-    background-color: var(--green);
+    &:hover {
+        background-color: $btnActive ;
+    }
 
 }
-
-.dotR {
-    background-color: var(--red);
-}
-
-.dotY {
-    background-color: var(--yellow);
-}
-    */
+ 
