@@ -1,32 +1,28 @@
 //@import "./theme.scss";
-@use "./theme" as *;
+@use './theme' as *;
 
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: $dark;
-  font-size: 15px;
-
+	font-family: 'Roboto', sans-serif;
+	background-color: $dark;
+	font-size: 15px;
 }
 
 .wrapper {
-  min-height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
- 
- 
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 }
- 
+
 .content {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-[class*="__container"] {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-
+[class*='__container'] {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 40px;
 }

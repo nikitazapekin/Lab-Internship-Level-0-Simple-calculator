@@ -1,80 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculator</title>
+	</head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator</title>
+	<body>
+		<div class="wrapper">
+			<header class="header">
+				<div class="header__container">
+					<h1 class="header__logo">Calc app</h1>
 
-</head>
+					<nav class="header__navigation">
+						<ul class="header__btns">
+							<li class="header__btn">ru</li>
+							<li class="header__btn">
+                <select class="header__select">
+                  <option value="dark" class="header__option">Dark</option>
+                  <option value="light" class="header__option">Light</option>
+                </select>
 
-<body>
+              </li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+			<main class="content">
+				<section class="calculator">
+					<div class="calculator__inner">
+						<div class="calculator__display">
+							<div class="dots">
+								<div class="dot dotR"></div>
+								<div class="dot dotY"></div>
+								<div class="dot dotG"></div>
+							</div>
+							<input
+								type="text"
+								class="calculator__input"
+								value=""
+								placeholder="0"
+								id="calculatorInput"
+								readonly
+							/>
+						</div>
+						<div class="calculator__btns">
+							<div class="calculator__btn btn__gray btn-effect" data-action="clear">AC</div>
+							<div class="calculator__btn btn__gray btn-effect" data-action="plusMinus">⁺∕₋</div>
+							<div class="calculator__btn btn__gray btn-effect" data-action="percent">%</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="divide">÷</div>
+							<div class="calculator__btn btn-effect" data-action="7">7</div>
+							<div class="calculator__btn btn-effect" data-action="8">8</div>
+							<div class="calculator__btn btn-effect" data-action="9">9</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="multiply">×</div>
+							<div class="calculator__btn btn-effect" data-action="4">4</div>
+							<div class="calculator__btn btn-effect" data-action="5">5</div>
+							<div class="calculator__btn btn-effect" data-action="6">6</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="minus">-</div>
+							<div class="calculator__btn btn-effect" data-action="1">1</div>
+							<div class="calculator__btn btn-effect" data-action="2">2</div>
+							<div class="calculator__btn btn-effect" data-action="3">3</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="plus">+</div>
+							<div class="calculator__btn btn__large btn-effect" data-action="0">0</div>
+							<div class="calculator__btn btn-effect" data-action="decimal">.</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="equals">=</div>
+						</div>
+					</div>
+				</section>
+			</main>
 
-
-
-  <div class="wrapper">
-    <header class="header">
-      <div class="header__container">
-        <h1 class="header__logo">
-          Calc app  
-        </h1>
-
-        <nav class="header__navigation">
-          <ul class="header__btns">
-            <li class="header__btn">ru</li>
-            <li class="header__btn">theme</li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main class="content">
-      <section class="calculator">
-        <div class="calculator__inner">
-          <div class="calculator__display">
-            <div class="dots">
-              <div class="dot dotR" ></div>
-              <div class="dot dotY" ></div>
-              <div class="dot dotG" ></div>
-            </div>
-            <input type="text" class="calculator__input" value=""
-            placeholder="0"
-            id="calculatorInput"
-            readonly/>
-
-          </div>
-          <div class="calculator__btns">
-            <div class="calculator__btn btn__gray btn-effect" data-action="clear">AC</div>
-            <div class="calculator__btn btn__gray btn-effect" data-action="plusMinus">⁺∕₋</div>
-            <div class="calculator__btn btn__gray btn-effect" data-action="percent">%</div>
-            <div class="calculator__btn btn__orange btn-effect" data-action="divide">÷</div>
-            <div class="calculator__btn btn-effect" data-action="7">7</div>
-            <div class="calculator__btn btn-effect" data-action="8">8</div>
-            <div class="calculator__btn btn-effect" data-action="9">9</div>
-            <div class="calculator__btn btn__orange btn-effect" data-action="multiply">×</div>
-            <div class="calculator__btn btn-effect" data-action="4">4</div>
-            <div class="calculator__btn btn-effect" data-action="5">5</div>
-            <div class="calculator__btn btn-effect" data-action="6">6</div>
-            <div class="calculator__btn btn__orange btn-effect" data-action="minus">-</div>
-            <div class="calculator__btn btn-effect" data-action="1">1</div>
-            <div class="calculator__btn btn-effect" data-action="2">2</div>
-            <div class="calculator__btn btn-effect" data-action="3">3</div>
-            <div class="calculator__btn btn__orange btn-effect" data-action="plus">+</div>
-            <div class="calculator__btn btn__large btn-effect" data-action="0">0</div>
-            <div class="calculator__btn btn-effect" data-action="decimal">.</div>
-            <div class="calculator__btn btn__orange btn-effect" data-action="equals">=</div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <div class="footer">
-      <div class="footer__inner">
-        <b class="footer__text"> Lab-Internship-Level-0-Simple-calculator 
-        </b>
-      </div>
-    </div>
-  </div>
- 
-</body>
-
+			<div class="footer">
+				<div class="footer__inner">
+					<b class="footer__text"> Lab-Internship-Level-0-Simple-calculator </b>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
