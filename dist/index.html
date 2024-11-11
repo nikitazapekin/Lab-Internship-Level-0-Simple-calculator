@@ -4,24 +4,21 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Calculator</title>
-
-		<link href="./styles/index.css" rel="stylesheet" />
-		<link href="./styles/global.css" rel="stylesheet" />
-		<link href="./styles/theme.css" rel="stylesheet" />
-		<link href="./styles/normalize.css" rel="stylesheet" />
-		<script defer src="main.c961c84e81446b160536.js"></script>
-	</head>
+	<script defer src="bundle.b991a26154f1d100811c.js"></script></head>
 
 	<body>
 		<div class="wrapper">
 			<header class="header">
 				<div class="header__container">
 					<h1 class="header__logo">Calc app</h1>
-
 					<nav class="header__navigation">
 						<ul class="header__btns">
-							<li class="header__btn">ru</li>
-							<li class="header__btn">theme</li>
+							<li class="header__btn">
+                <select class="header__select">
+                  <option value="dark" class="header__option">Dark</option>
+                  <option value="light" class="header__option">Light</option>
+                </select>
+              </li>
 						</ul>
 					</nav>
 				</div>
@@ -35,29 +32,35 @@
 								<div class="dot dotY"></div>
 								<div class="dot dotG"></div>
 							</div>
-							<input type="text" class="calculator__input" value="0" readonly />
+							<input
+								type="text"
+								class="calculator__input"
+								value=""
+								placeholder="0"
+								id="calculatorInput"
+								readonly
+							/>
 						</div>
 						<div class="calculator__btns">
-							<div class="calculator__btn btn__gray">AC</div>
-							<div class="calculator__btn btn__gray">⁺∕₋</div>
-							<div class="calculator__btn btn__gray">%</div>
-							<div class="calculator__btn btn__orange">÷</div>
-							<div class="calculator__btn">7</div>
-							<div class="calculator__btn">8</div>
-							<div class="calculator__btn">9</div>
-
-							<div class="calculator__btn btn__orange">×</div>
-							<div class="calculator__btn">4</div>
-							<div class="calculator__btn">5</div>
-							<div class="calculator__btn">6</div>
-							<div class="calculator__btn btn__orange">-</div>
-							<div class="calculator__btn">1</div>
-							<div class="calculator__btn">2</div>
-							<div class="calculator__btn">3</div>
-							<div class="calculator__btn btn__orange">+</div>
-							<div class="calculator__btn btn__large">0</div>
-							<div class="calculator__btn">,</div>
-							<div class="calculator__btn btn__orange">=</div>
+							<div class="calculator__btn btn__gray btn-effect" data-action="clear">AC</div>
+							<div class="calculator__btn btn__gray btn-effect" data-action="plusMinus">⁺∕₋</div>
+							<div class="calculator__btn btn__gray btn-effect" data-action="percent">%</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="divide">÷</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="7">7</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="8">8</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="9">9</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="multiply">×</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="4">4</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="5">5</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="6">6</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="minus">-</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="1">1</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="2">2</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="3">3</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="plus">+</div>
+							<div class="calculator__btn  btn_grayLight btn__large btn-effect" data-action="0">0</div>
+							<div class="calculator__btn btn_grayLight btn-effect" data-action="decimal">.</div>
+							<div class="calculator__btn btn__orange btn-effect" data-action="equals">=</div>
 						</div>
 					</div>
 				</section>
@@ -69,6 +72,5 @@
 				</div>
 			</div>
 		</div>
-		<script src="./src/index.js"></script>
 	</body>
 </html>

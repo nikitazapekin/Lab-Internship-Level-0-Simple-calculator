@@ -15,7 +15,7 @@ export function applyTheme(theme: string): void {
         document.body.style.backgroundColor = "#1f1e1e"
         logoElement.style.color = '#ffffff';
 
-        calculatorLightGrayBtns.forEach(btn => {
+     calculatorLightGrayBtns.forEach(btn => {
             btn.style.backgroundColor = "#646464"
 
         })

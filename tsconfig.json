@@ -8,8 +8,8 @@
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": true,
-    "noEmit": true
+    
+    "noEmit": false
   },
   "include": ["src/**/*", "webpack.config.js"]
 }

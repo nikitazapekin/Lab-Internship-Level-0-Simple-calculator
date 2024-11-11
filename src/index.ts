@@ -45,6 +45,4 @@ selectElement.addEventListener('change', () => {
 });
  
 
-function test(tes: any) {
-    
-}
+ 
