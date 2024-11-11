@@ -1,8 +1,8 @@
  
-import '../styles/index.css';
-import '../styles/global.css';
-import '../styles/theme.css';
-import '../styles/normalize.css';
+import '../styles/index.scss';
+import '../styles/global.scss';
+import '../styles/theme.scss';
+import '../styles/normalize.scss';
 import "../styles/test.scss"
 console.log(1)
 //npx tsc --watch

@@ -1,5 +1,8 @@
+//@import "./theme";
+@use "./theme" as *;
+
 .header {
-    background-color: var(--gray);
+    background-color: $gray;
 }
 
 .header__container {
@@ -9,7 +12,7 @@
 }
 .header__logo {
     font-size: 48px;
-    color: var(--white);
+    color: $white;
     cursor: pointer;
 }
 .calculator {
@@ -25,7 +28,7 @@
     border-radius: 30px;
     align-self: center;
     justify-self: center;
-    background-color: var(--gray);
+    background-color: $gray;
     display: grid;
     grid-template-columns: minmax(300px, 800px);
 }
@@ -45,7 +48,7 @@
 
     text-align: right;
     padding-top: 30px;
-    color: var(--white);
+    color:  $white;
 }
 
 .calculator__btns {
@@ -64,22 +67,22 @@
 
 .calculator__btn {
     width: 100%;
-    background-color: var(--lightestGray);
+    background-color: $lightestGray;
     cursor: pointer;
     font-size: 28px;
     padding: 20px 10px;
-    color: var(--white);
+    color:  $white;
     font-family: 900;
 
 
 }
 
 .btn__orange {
-    background-color: var(--orange);
+    background-color: $orange;
 }
 
 .btn__gray {
-    background-color: var(--lightGray);
+    background-color: $lightGray;
 }
 
 .btn__large {
@@ -101,20 +104,20 @@
 }
 
 .dotG {
-    background-color: var(--green);
+    background-color: $green;
 
 }
 
 .dotR {
-    background-color: var(--red);
+    background-color: $red;
 }
 
 .dotY {
-    background-color: var(--yellow);
+    background-color: $yellow;
 }
 
 .footer {
-    background-color: var(--gray);
+    background-color: $gray;
 }
 
 .footer__inner {
@@ -125,7 +128,7 @@
 }
 .footer__text {
     font-size: 20px;
-    color: var(--white);
+    color:  $white;
 }
 /*
 

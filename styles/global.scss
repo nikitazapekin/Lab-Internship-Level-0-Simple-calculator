@@ -1,7 +1,9 @@
- 
+//@import "./theme.scss";
+@use "./theme" as *;
+
 body {
-  font-family: 'GeorgiaR', sans-serif;
-  background-color: var(--dark);
+  font-family: 'Roboto', sans-serif;
+  background-color: $dark;
   font-size: 15px;
 
 }
@@ -14,14 +16,7 @@ body {
  
  
 }
-/*
-.content {
-  flex: 1 1 auto;
-
  
-}
-
-*/
 .content {
   flex: 1 1 auto;
   display: flex;
