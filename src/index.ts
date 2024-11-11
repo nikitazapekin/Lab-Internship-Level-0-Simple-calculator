@@ -20,48 +20,34 @@ buttons.forEach((button) => {
             handleClear()
             //  handleClear();
         } else if (action == "plusMinus") {
-            //  handlePlusMinus();
-            // updateDisplay(action);
-        } else if (action == "percent") {
-            //  handlePercent();
-            // updateDisplay(action);
-        } else if (action == "equals") {
+         handlePlusMinus()
+        }  else if (action == "equals") {
             //  handleEquals();
             // updateDisplay(action);
+            handleEquals()
         }
  
         else if (action) {
-          /*  if (action == "plus" && !["plus", "minus", "multiply", "divide"].includes(currentValue[currentValue.length])) {
-                updateDisplay("+");
-            }
-            else if (action == "minus" && !["plus", "minus", "multiply", "divide"].includes(currentValue[currentValue.length])) {
-                updateDisplay("-");
-            }
-            else if (action == "multiply" && !["plus", "minus", "multiply", "divide"].includes(currentValue[currentValue.length])) {
-                updateDisplay("*");
-            }
-            else if (action == "divide" && !["plus", "minus", "multiply", "divide"].includes(currentValue[currentValue.length])) {
-                updateDisplay("/");
-            }
-            else {
-                updateDisplay(action);
+  
 
-            }
-
-
-            */
-
-
-            const lastChar = currentValue[currentValue.length - 1];
-            const isLastCharOperator = /[+\-*/.]/.test(lastChar);  
-            
-            if (["plus", "minus", "multiply", "divide", "decimal"].includes(action) && !isLastCharOperator) {
-             
-                updateDisplay(getOperatorSymbol(action));
-            } else if (!["plus", "minus", "multiply", "divide", "decimal"].includes(action)) {
+    
            
+         
+            const lastChar = currentValue[currentValue.length - 1];
+            const isLastCharOperator = /[+\-*/.%]/.test(lastChar);  
+        
+           
+            if (["plus", "minus", "multiply", "divide", "decimal", "percent"].includes(action) && !isLastCharOperator) {
+               
+                updateDisplay(getOperatorSymbol(action));
+            } 
+       
+            else if (!["plus", "minus", "multiply", "divide", "decimal", "percent"].includes(action)) {
                 updateDisplay(action);
             }
+      
+      
+
 
 
 
@@ -78,19 +64,111 @@ function getOperatorSymbol(action: string): string {
         case "multiply": return "*";
         case "divide": return "/";
         case "decimal": return ".";
+        case "percent": return "%";
         default: return "";
     }
 }
 function handleClear() {
-    // console.log("www")
-    //updateDisplay(" ");
-    currentValue = "0"
+   
+    currentValue = ""
     calculatorInput.value = currentValue
 }
 function updateDisplay(symbol: string) {
     currentValue = currentValue + symbol
     calculatorInput.value = currentValue
 }
+
+function handlePlusMinus () {
+   let currentValue = calculatorInput.value;
+    
+    
+    if (!currentValue.includes("+")) {
+        currentValue = "-" + currentValue;
+    } else {
+      
+        currentValue = currentValue.replace(/\+/g, "-");
+    }
+     
+    if (currentValue.includes("-")) {
+        if(currentValue[0]=="-") {
+
+              currentValue = currentValue.slice(1, currentValue.length).replace(/-/g, "+");
+        } else {
+            currentValue = currentValue.replace(/-/g, "+");
+        }
+    }
+  
+    calculatorInput.value = currentValue;
+  
+}
+
+
+
+
+
+function handleEquals() {
+    let expression = currentValue.trim();
+    
+    if (!expression) return;
+
+   
+    expression = processMultiplicationDivision(expression);
+ 
+    expression = processAdditionSubtraction(expression);
+
+  
+    calculatorInput.value = expression;
+    currentValue = expression; 
+} 
+
+
+
+function processMultiplicationDivision(expression: string): string {
+    let regex = /([0-9]+(?:\.[0-9]+)?)([*/])([0-9]+(?:\.[0-9]+)?)/g;
+
+    // Обрабатываем умножение и деление
+    expression = expression.replace(regex, (match, num1, operator, num2) => {
+        const n1 = parseFloat(num1);
+        const n2 = parseFloat(num2);
+
+     
+        let result: number = 0;
+
+        if (operator === "*") {
+            result = n1 * n2;
+        } else if (operator === "/") {
+            result = n1 / n2;
+        }
+
+        return result.toString();  
+    });
+
+    return expression;
+}
+
+function processAdditionSubtraction(expression: string): string {
+    let regex = /([0-9]+(?:\.[0-9]+)?)([+\-])([0-9]+(?:\.[0-9]+)?)/g;
+
+  
+    expression = expression.replace(regex, (match, num1, operator, num2) => {
+        const n1 = parseFloat(num1);
+        const n2 = parseFloat(num2);
+
+    
+        let result: number = 0;
+
+        if (operator === "+") {
+            result = n1 + n2;
+        } else if (operator === "-") {
+            result = n1 - n2;
+        }
+
+        return result.toString();  
+    });
+
+    return expression;
+}
+
 /*
    const calculatorInput = document.getElementById("calculatorInput") as HTMLInputElement;
    let currentValue = "0";
