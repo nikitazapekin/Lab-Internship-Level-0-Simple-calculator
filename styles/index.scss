@@ -75,6 +75,7 @@
 
          &:hover {
              background-color: $gray;
+             cursor: pointer;
          }
 
          &:active {
@@ -84,6 +85,7 @@
 
      &__select:focus+&__option {
          background-color:  $lightGray;
+         cursor: pointer;
      }
 
 
