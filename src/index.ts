@@ -124,23 +124,24 @@ function handleEquals() {
 
 
 function processMultiplicationDivision(expression: string): string {
-    let regex = /([0-9]+(?:\.[0-9]+)?)([*/])([0-9]+(?:\.[0-9]+)?)/g;
+    let regex = /([0-9]+(?:\.[0-9]+)?)([*/%])([0-9]+(?:\.[0-9]+)?)/g;
 
-    // Обрабатываем умножение и деление
+ 
     expression = expression.replace(regex, (match, num1, operator, num2) => {
         const n1 = parseFloat(num1);
         const n2 = parseFloat(num2);
-
-     
+ 
         let result: number = 0;
 
         if (operator === "*") {
             result = n1 * n2;
         } else if (operator === "/") {
             result = n1 / n2;
+        } else if (operator === "%") {
+            result = n1 % n2;  
         }
 
-        return result.toString();  
+        return result.toString(); 
     });
 
     return expression;
